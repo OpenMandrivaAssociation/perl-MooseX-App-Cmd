@@ -1,23 +1,24 @@
 %define upstream_name    MooseX-App-Cmd
-%define upstream_version 0.06
+%define upstream_version 0.07
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Reads from config file
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Reads from config file
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(App::Cmd)
-BuildRequires: perl(Getopt::Long::Descriptive)
-BuildRequires: perl(Moose)
-BuildRequires: perl(MooseX::Getopt)
-BuildRequires: perl(Test::use::ok)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(App::Cmd)
+BuildRequires:	perl(Getopt::Long::Descriptive)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(MooseX::Getopt)
+BuildRequires:	perl(Test::use::ok)
+BuildRequires:	perl(Test::Output)
+BuildArch:	noarch
 
 %description
 This module marries the App::Cmd manpage with the MooseX::Getopt manpage.
@@ -34,24 +35,26 @@ returning a the Getopt::Long::Descriptive manpage spec.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.60.0-2mdv2011.0
++ Revision: 656941
+- rebuild for updated spec-helper
+
+* Fri Dec 03 2010 Shlomi Fish <shlomif@mandriva.org> 0.60.0-1mdv2011.0
++ Revision: 606877
+- import perl-MooseX-App-Cmd
 
