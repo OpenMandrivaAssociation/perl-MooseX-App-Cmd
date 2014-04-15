@@ -6,6 +6,7 @@ Version:	%perl_convert_version %{upstream_version}
 Release:	3
 
 Summary:	Reads from config file
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
@@ -18,6 +19,7 @@ BuildRequires:	perl(Moose)
 BuildRequires:	perl(MooseX::Getopt)
 BuildRequires:	perl(Test::use::ok)
 BuildRequires:	perl(Test::Output)
+BuildRequires:  perl(namespace::autoclean)
 BuildArch:	noarch
 
 %description
@@ -48,13 +50,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.60.0-2mdv2011.0
-+ Revision: 656941
-- rebuild for updated spec-helper
-
-* Fri Dec 03 2010 Shlomi Fish <shlomif@mandriva.org> 0.60.0-1mdv2011.0
-+ Revision: 606877
-- import perl-MooseX-App-Cmd
 
