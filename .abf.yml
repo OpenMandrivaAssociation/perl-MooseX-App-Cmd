@@ -1,2 +1,4 @@
+removed_sources:
+  MooseX-App-Cmd-0.07.tar.gz: d84140d078196f081959d97be51539ced1607df4
 sources:
-  "MooseX-App-Cmd-0.07.tar.gz": d84140d078196f081959d97be51539ced1607df4
+  MooseX-App-Cmd-0.27.tar.gz: edc2234a1073823bb0a9c741161578e1fa675aab

@@ -1,11 +1,12 @@
 %define upstream_name    MooseX-App-Cmd
-%define upstream_version 0.07
+%define upstream_version 0.27
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Reads from config file
+
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -50,4 +51,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
