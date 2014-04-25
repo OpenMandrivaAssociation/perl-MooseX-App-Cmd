@@ -14,6 +14,8 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Mouse)
+BuildRequires: perl(Any::Moose)
 BuildRequires:	perl(App::Cmd)
 BuildRequires:	perl(Getopt::Long::Descriptive)
 BuildRequires:	perl(Moose)
