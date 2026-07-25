@@ -1,16 +1,16 @@
 %define upstream_name    MooseX-App-Cmd
-%define upstream_version 0.07
+%define upstream_version 0.34
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Reads from config file
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/moose/MooseX-App-Cmd
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/MooseX-App-Cmd-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
