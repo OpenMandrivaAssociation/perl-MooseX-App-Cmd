@@ -1,16 +1,14 @@
 %define upstream_name    MooseX-App-Cmd
-%define upstream_version 0.34
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.34
+Release:	2
 
 Summary:	Reads from config file
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/moose/MooseX-App-Cmd
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/MooseX-App-Cmd-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/MooseX-App-Cmd-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -35,7 +33,7 @@ MooseX::Getopt manpage defining the options for you instead of 'opt_spec'
 returning a the Getopt::Long::Descriptive manpage spec.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
